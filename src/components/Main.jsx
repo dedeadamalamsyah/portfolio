@@ -38,7 +38,7 @@ export default function Main(projects) {
         >
           Contact
         </div>
-        <div className="flex gap-12 justify-center text-3xl">
+        <div className="flex gap-8 justify-center text-2xl sm:text-3xl">
           <a href="https://github.com/dedeadamalamsyah">
             <BsGithub />
           </a>

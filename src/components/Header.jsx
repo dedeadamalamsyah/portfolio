@@ -6,7 +6,7 @@ import {
 
 export default function Header() {
   return (
-    <header className="sticky top-0 right-0 bg-slate-800">
+    <header className="sticky top-0 bg-slate-800">
       <div className="mx-auto max-w-screen-2xl px-6 sm:px-9 py-6 flex flex-col gap-y-3 items-center sm:flex-row sm:justify-between">
         <a href="">
           <div className="flex items-center text-base sm:text-lg md:text-xl font-bold text-sky-500 mr-1 h-10">
