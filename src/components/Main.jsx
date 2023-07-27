@@ -6,8 +6,10 @@ import {
   BsFacebook,
   BsWhatsapp,
 } from "react-icons/bs";
+import { HiOutlineMail } from "react-icons/hi";
 
 export default function Main(projects) {
+
   return (
     <main>
       <div className="mx-auto max-w-screen-2xl px-6 sm:px-9 py-6">
@@ -15,17 +17,17 @@ export default function Main(projects) {
           <div className="md:w-1/2">
             <h1 className="text-xl text-center md:text-left  sm:text-2xl md:text-3xl font-bold">
               Hi there, I&apos;m&nbsp;
-              <span className="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-br bg-clip-text text-transparent from-sky-500 to-cyan-400">
                 Adam
               </span>
               👋
             </h1>
-            <p className="mt-6 text-base sm:text-lg md:text-xl">
+            <div className="mt-6 text-base sm:text-lg md:text-xl">
               <p>Junior Web Developer | C# Developer</p>
-              <p className="tracking-normal bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent font-extrabold italic">
+              <p className="tracking-normal bg-gradient-to-br bg-clip-text text-transparent font-extrabold italic from-sky-500 to-cyan-400">
                 C# is the future web development
               </p>
-            </p>
+            </div>
           </div>
           <img src="aspreact.png" alt=".NET with React" className="md:w-1/2" />
         </div>
@@ -34,11 +36,17 @@ export default function Main(projects) {
       <div className="mx-auto max-w-screen-2xl px-6 sm:px-9 py-6">
         <div
           id="contact"
-          className="mb-6 text-lg sm:text-xl md:text-2xl font-bold text-center bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent"
+          className="mb-6 text-lg sm:text-xl md:text-2xl font-bold text-center bg-gradient-to-br bg-clip-text text-transparent from-sky-500 to-cyan-400"
         >
           Contact
         </div>
-        <div className="flex gap-8 justify-center text-2xl sm:text-3xl">
+        <div className="flex gap-6 sm:gap-10 justify-center text-2xl sm:text-3xl items-center">
+          <a href="mailto:dedeadamalamsyah9@gmail.com">
+            <HiOutlineMail className="text-3xl sm:text-4xl"/>
+          </a>
+          <a href="https://wa.me/6282233824398">
+            <BsWhatsapp/>
+          </a>
           <a href="https://github.com/dedeadamalamsyah">
             <BsGithub />
           </a>
@@ -51,26 +59,7 @@ export default function Main(projects) {
           <a href="https://www.facebook.com/dedeadamalamsyah">
             <BsFacebook />
           </a>
-          <a href="https://wa.me/6282233824398">
-            <BsWhatsapp />
-          </a>
         </div>
-      </div>
-      <div className="mx-auto max-w-screen-2xl px-6 sm:px-9 py-6">
-        <div
-          id="about"
-          className="mb-1 text-lg sm:text-xl md:text-2xl font-bold text-center bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent"
-        >
-          About
-        </div>
-        <p className="text-center">
-          I&apos;m a Junior Web Developer with a passion for C#. I am eager to
-          learn and grow, and I am always looking for new challenges. I am
-          proficient in the following technologies: C#, ASP.NET, MVC, LINQ, and
-          SQL Server. I am also proficient in the use of other web development
-          technologies, such as HTML, CSS, and JavaScript. Always willing to
-          learn new things.
-        </p>
       </div>
     </main>
   );

@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { ThemeContext } from "../App";
+
 export default function Project() {
   const projects = [
     {
@@ -95,11 +98,13 @@ export default function Project() {
     },
   ];
 
+  const { theme } = useContext(ThemeContext);
+
   return (
     <div className="mx-auto max-w-screen-2xl px-6 sm:px-9 py-6">
       <div
         id="projects"
-        className="mb-6 text-lg sm:text-xl md:text-2xl font-bold text-center bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent"
+        className="mb-6 text-lg sm:text-xl md:text-2xl font-bold text-center bg-gradient-to-br bg-clip-text text-transparent from-sky-500 to-cyan-400"
       >
         Projects
       </div>
@@ -107,17 +112,21 @@ export default function Project() {
         {projects.map((project, i) => (
           <div
             key={i}
-            className="flex flex-col items-center gap-x-8 rounded-md bg-slate-800 p-3 lg:flex-row"
+            className={`flex flex-col items-center gap-x-8 rounded-md p-3 lg:flex-row
+              ${theme === "dark" ? "bg-slate-800" : "bg-slate-500"}`}
           >
             <a
               href={project.link}
               className="w-64 shrink-0 flex justify-center"
             >
-              <img src={project.image} alt={project.name}/>
+              <img src={project.image} alt={project.name} />
             </a>
             <div className="">
               <div className="flex flex-col items-center gap-y-2 text-center lg:flex-row">
-                <a href={project.link} className="hover:text-cyan-400">
+                <a
+                  href={project.link}
+                  className="hover:text-cyan-400"
+                >
                   <div className="text-base sm:text-lg md:text-xl font-semibold">
                     {project.name}
                   </div>
@@ -133,7 +142,10 @@ export default function Project() {
                   ))}
                 </div>
               </div>
-              <p className="mt-3 text-gray-400 text-justify">
+              <p
+                className={`mt-3 text-justify
+                  ${theme === "dark" ? "text-gray-400" : "text-gray-900"}`}
+              >
                 {project.description}
               </p>
             </div>
