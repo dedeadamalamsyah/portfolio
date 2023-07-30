@@ -1,14 +1,16 @@
+import { useContext } from "react";
 import Project from "./Project";
 import {
   BsGithub,
   BsLinkedin,
   BsInstagram,
   BsFacebook,
-  BsWhatsapp,
 } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
+import { LanguageContext, strings } from "../App";
 
 export default function Main(projects) {
+  const { language } = useContext(LanguageContext);
 
   return (
     <main>
@@ -16,16 +18,16 @@ export default function Main(projects) {
         <div className="flex flex-col-reverse items-center md:flex-row md:justify-between">
           <div className="md:w-1/2">
             <h1 className="text-xl text-center md:text-left  sm:text-2xl md:text-3xl font-bold">
-              Hi there, I&apos;m&nbsp;
+              {strings[language].introduction} 
               <span className="bg-gradient-to-br bg-clip-text text-transparent from-sky-500 to-cyan-400">
                 Adam
               </span>
               👋
             </h1>
             <div className="mt-6 text-base sm:text-lg md:text-xl">
-              <p>Junior Web Developer | C# Developer</p>
+              <p> {strings[language].tagline}</p>
               <p className="tracking-normal bg-gradient-to-br bg-clip-text text-transparent font-extrabold italic from-sky-500 to-cyan-400">
-                C# is the future web development
+                {strings[language].slogan}
               </p>
             </div>
           </div>
@@ -38,14 +40,11 @@ export default function Main(projects) {
           id="contact"
           className="mb-6 text-lg sm:text-xl md:text-2xl font-bold text-center bg-gradient-to-br bg-clip-text text-transparent from-sky-500 to-cyan-400"
         >
-          Contact
+          {strings[language].contacts}
         </div>
         <div className="flex gap-6 sm:gap-10 justify-center text-2xl sm:text-3xl items-center">
           <a href="mailto:dedeadamalamsyah9@gmail.com">
-            <HiOutlineMail className="text-3xl sm:text-4xl"/>
-          </a>
-          <a href="https://wa.me/6282233824398">
-            <BsWhatsapp/>
+            <HiOutlineMail className="text-3xl sm:text-4xl" />
           </a>
           <a href="https://github.com/dedeadamalamsyah">
             <BsGithub />
