@@ -3,6 +3,9 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import { createContext } from "react";
+import { useRef } from "react";
+import { BackTopButton } from "./components/BackTopButton";
+import { useEffect } from "react";
 
 export const projects = [
   {
@@ -144,6 +147,13 @@ export const strings = {
 function App() {
   const [theme, setTheme] = useState("dark");
   const [language, setLanguage] = useState("en");
+  const scroll = useRef(null);
+
+  useEffect(() => {
+    console.log(
+      `Theme changed to ${theme === "dark" ? "dark" : "light"}`
+    );
+  }, [theme]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
@@ -155,7 +165,8 @@ function App() {
               : "bg-slate-600 text-gray-900"
           }
         >
-          <Header />
+          <BackTopButton scrollRef={scroll}/>
+          <Header scrollRef={scroll} />
           <Main />
           <Footer />
         </div>

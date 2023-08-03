@@ -7,7 +7,7 @@ import {
 import { LanguageContext, ThemeContext, strings } from "../App";
 import ThemeButton from "./ThemeButton";
 
-export default function Header() {
+export default function Header({ scrollRef }) {
   const { theme } = useContext(ThemeContext);
   const { language, setLanguage } = useContext(LanguageContext);
 
@@ -17,7 +17,10 @@ export default function Header() {
         theme === "dark" ? "bg-slate-800" : "bg-slate-500"
       }`}
     >
-      <div className="mx-auto max-w-screen-2xl px-6 sm:px-9 py-6 flex flex-col gap-y-3 items-center sm:flex-row sm:justify-between">
+      <div
+        ref={scrollRef}
+        className="mx-auto max-w-screen-2xl px-6 sm:px-9 py-6 flex flex-col gap-y-3 items-center sm:flex-row sm:justify-between"
+      >
         <a href="">
           <div className="flex items-center text-base sm:text-lg md:text-xl font-bold mr-1 h-10 text-sky-500">
             <TbBrandLetterboxd className="h-6 w-6" />
