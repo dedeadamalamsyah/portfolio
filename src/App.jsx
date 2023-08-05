@@ -132,14 +132,14 @@ export const strings = {
     projects: "Projek",
     contacts: "Kontak",
     introduction: "Hai semuanya, saya ",
-    tagline: "Pengembang Web Junior | Pengembang C",
+    tagline: "Pengembang Web | Pengembang C",
     slogan: "C# adalah bahasa pengembangan web masa depan",
   },
   en: {
     projects: "Projects",
     contacts: "Contacts",
     introduction: "Hi there, I'm ",
-    tagline: "Junior Web Developer | C Developer",
+    tagline: "Web Developer | C# Developer",
     slogan: "C# is the future web development language",
   },
 };
